@@ -97,7 +97,7 @@ io.on("connection", (socket) => {
     console.log("User disconnected", socket.id);
   });
 });
-
+app.use("/", (req, res) => res.status(200).json("Hello, world!"));
 app.use("/api/auth", require("./route/auth/auth.route"));
 app.use("/api/chat", require("./route/chat/chat.route"));
 app.use("/api/poll", require("./route/poll/poll.route"));
